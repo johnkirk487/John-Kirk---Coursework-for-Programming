@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Mobile
+comment0.text=\r\n\ The\ Mobile\ class\ represents\ a\ mobile\ phone\ in\ a\ Gadget\ Shop.\r\n\ It\ extends\ the\ Gadget\ superclass\ and\ stores\ information\r\n\ about\ the\ amount\ of\ calling\ credit\ available\ on\ the\ mobile.\r\n\ It\ also\ allows\ information\ about\ the\ mobile\ phone's\ attributes\ to\ be\ accessed\ from\ elsewhere\ in\ the\r\n\ programme.\r\n\ It\ also\ plays\ a\ part\ in\ producing\ information\ to\ be\ printed\ to\ the\ terminal\ window\r\n\ and\ to\ a\ log\ area\ in\ the\ graphical\ user\ interface.\r\n\ \r\n\ Author\:\ John\ Kirk\r\n\ Date\:\ 2026\r\n
+comment1.params=model\ price\ weight\ size\ callingcredit
+comment1.target=Mobile(java.lang.String,\ double,\ int,\ java.lang.String,\ int)
+comment1.text=constructor\ method\ which\ accepts\ a\ model\ name,model\ price,model\ weight,model\ size,and\ amount\ of\r\ncallingcredit\ as\ parameters.
+comment2.params=amount
+comment2.target=void\ addcallingcredit(int)
+comment2.text=modifier\ method\ which\ takes\ as\ a\ parameter\ a\ new\ amount\ of\ calling\ credit\ to\ be\ added\ and\ adds\ this\ to\r\nthe\ existing\ calling\ credit
+comment3.params=phonenumber\ callduration
+comment3.target=double\ MakeCall(java.lang.String,\ int)
+comment3.text=instance\ method\ which\ takes\ the\ parameters,\ the\ phone\ number\ and\ call\ duration\ to\ produce\ information\r\nabout\ the\ length\ of\ time\ a\ mobile\ phone\ user\ had\ called\ a\ number\ for.
+numComments=4

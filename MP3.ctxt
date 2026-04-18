@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=MP3
+comment0.text=\r\n\ The\ MP3\ class\ represents\ an\ MP3\ in\ a\ Gadget\ Shop.\r\n\ It\ extends\ the\ Gadget\ superclass\ and\ stores\ information\r\n\ about\ the\ amount\ of\ memory\ available\ on\ the\ MP3\ player.\r\n\ It\ also\ allows\ information\ about\ the\ MP3\ player's\ attributes\ to\ be\ accessed\ from\ elsewhere\ in\ the\r\n\ programme.\r\n\ It\ also\ plays\ a\ part\ in\ producing\ information\ to\ be\ printed\ to\ the\ terminal\ window\r\n\ and\ to\ a\ log\ area\ in\ the\ graphical\ user\ interface.\r\n\ \r\n\ Author\:\ John\ Kirk\r\n\ Date\:\ 2026\r\n
+comment1.params=model\ price\ weight\ size\ memory
+comment1.target=MP3(java.lang.String,\ double,\ int,\ java.lang.String,\ int)
+comment1.text=constructor\ method\ which\ accepts\ a\ model\ name,model\ price,model\ weight,model\ size,and\ amount\ of\r\nMP3\ memory\ as\ parameters.
+comment2.params=number\ memory
+comment2.target=double\ AddTrack(int,\ int)
+comment2.text=instance\ method\ which\ takes\ the\ parameters,\ the\ song\ track\ number\ and\ MP3\ Memory\ and\ uses\ them\ to\ add\r\nmusic\ to\ the\ MP3\ player.
+numComments=3

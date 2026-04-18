@@ -1,0 +1,197 @@
+/**imports the components which allow the JavaFX Application to function.*/
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import java.util.ArrayList;
+
+public class GadgetShop extends Application {
+    /**Creates various TextFields for the input features.*/
+    private final TextField modelField1 = new TextField();
+    private final TextField modelField2 = new TextField();
+    private final TextField priceField1 = new TextField();
+    private final TextField priceField2 = new TextField();
+    private final TextField weightField1 = new TextField();
+    private final TextField weightField2 = new TextField();
+    private final TextField sizeField1 = new TextField();
+    private final TextField sizeField2 = new TextField();
+    private final TextField memoryField1 = new TextField();
+    private final TextField memoryField2 = new TextField();
+    private final TextArea logArea = new TextArea();
+    private final TextArea outputArea = new TextArea();
+    private final ArrayList<Gadget> gadgets = new ArrayList<>();
+    
+    
+    @Override
+    public void start(Stage stage){
+        /**A pane layout is made where the buttons,labels and textfields are positioned based on co-ordinates
+         * given */
+        Pane root = new Pane();
+        
+        Label modelLabel1 = new Label("MP3 model:");
+        modelLabel1.setLayoutX(20);
+        modelLabel1.setLayoutY(5);
+        modelField1.setLayoutX(100);
+        modelField1.setLayoutY(0);
+        
+        Label modelLabel2 = new Label("Mobile model:");
+        modelLabel2.setLayoutX(270);
+        modelLabel2.setLayoutY(5);
+        modelField2.setLayoutX(365);
+        modelField2.setLayoutY(0);
+        
+        Label priceLabel1 = new Label("MP3 price:");
+        priceLabel1.setLayoutX(20);
+        priceLabel1.setLayoutY(30);
+        priceField1.setLayoutX(100);
+        priceField1.setLayoutY(25);
+        
+        Label priceLabel2 = new Label("Mobile price:");
+        priceLabel2.setLayoutX(270);
+        priceLabel2.setLayoutY(30);
+        priceField2.setLayoutX(365);
+        priceField2.setLayoutY(25);
+        
+        Label weightLabel1 = new Label("MP3 weight:");
+        weightLabel1.setLayoutX(20);
+        weightLabel1.setLayoutY(55);
+        weightField1.setLayoutX(100);
+        weightField1.setLayoutY(50);
+        
+        Label weightLabel2 = new Label("Mobile weight:");
+        weightLabel2.setLayoutX(270);
+        weightLabel2.setLayoutY(55);
+        weightField2.setLayoutX(365);
+        weightField2.setLayoutY(50);
+        
+        Label sizeLabel1 = new Label("MP3 size:");
+        sizeLabel1.setLayoutX(20);
+        sizeLabel1.setLayoutY(80);
+        sizeField1.setLayoutX(100);
+        sizeField1.setLayoutY(75);
+        
+        Label sizeLabel2 = new Label("Mobile size:");
+        sizeLabel2.setLayoutX(270);
+        sizeLabel2.setLayoutY(80);
+        sizeField2.setLayoutX(365);
+        sizeField2.setLayoutY(75);
+        
+        Label memoryLabel1 = new Label("MP3 memory:");
+        memoryLabel1.setLayoutX(20);
+        memoryLabel1.setLayoutY(105);
+        memoryField1.setLayoutX(100);
+        memoryField1.setLayoutY(100);
+        
+        Label memoryLabel2 = new Label("Calling credit:");
+        memoryLabel2.setLayoutX(270);
+        memoryLabel2.setLayoutY(105);
+        memoryField2.setLayoutX(365);
+        memoryField2.setLayoutY(100);
+        
+        Button addMP3Button = new Button("Add MP3");
+        addMP3Button.setLayoutX(20);
+        addMP3Button.setLayoutY(140);
+        
+        Button addMobileButton = new Button("Add Mobile");
+        addMobileButton.setLayoutX(100);
+        addMobileButton.setLayoutY(140);
+        
+        Button displayNumberButton = new Button("Display Number");
+        displayNumberButton.setLayoutX(195);
+        displayNumberButton.setLayoutY(140);
+        
+        Button clearAllFieldsButton = new Button("Clear All Fields");
+        clearAllFieldsButton.setLayoutX(307);
+        clearAllFieldsButton.setLayoutY(140);
+        
+        Button makeAPhoneCallButton = new Button ("Make A Phone Call");
+        makeAPhoneCallButton.setLayoutX(20);
+        makeAPhoneCallButton.setLayoutY(170);
+        
+        Button downloadMusicButton = new Button ("Download A Music Track");
+        downloadMusicButton.setLayoutX(140);
+        downloadMusicButton.setLayoutY(170);
+        
+        Button displayAllButton = new Button("Display All");
+        displayAllButton.setLayoutX(290);
+        displayAllButton.setLayoutY(170);
+        
+        Button exitButton = new Button("Exit");
+        exitButton.setLayoutX(365);
+        exitButton.setLayoutY(170);
+        
+        logArea.setLayoutX(5);
+        logArea.setLayoutY(210);
+        
+        outputArea.setLayoutX(5);
+        outputArea.setLayoutY(410);
+        
+        /**The MP3 Object is created, logged,and displayed on the GUI*/
+         addMP3Button.setOnAction(e-> { //triggers the Add MP3 function when clicked.
+         MP3 m = new MP3(getModel1(),getPrice1(),getWeight1(),getSize1(),getMemory1());   
+         gadgets.add(m);
+         System.out.println("Add MP3 button clicked");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Message");
+            alert.setHeaderText("You successfully added a new MP3");
+            alert.setContentText("Click OK to dismiss");
+         if(alert.showAndWait().get() == ButtonType.OK) {
+        }
+         logArea.appendText("Added:"+ m + System.lineSeparator());
+         m.display();
+         });
+         
+        /**The Mobile Object is created, logged,and displayed on the GUI*/
+        addMobileButton.setOnAction(e-> { //triggers the Add Moblie function when clicked.
+        Mobile m = new Mobile(getModel2(),getPrice2(),getWeight2(),getSize2(),getMemory2());   
+         gadgets.add(m);
+         System.out.println("Add Mobile button clicked");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Message");
+            alert.setHeaderText("You successfully added a new Mobile Phone");
+            alert.setContentText("Click OK to dismiss");
+         if(alert.showAndWait().get() == ButtonType.OK) {
+        }
+         logArea.appendText("Added:"+ m + System.lineSeparator());
+         m.display();
+        });
+        
+        /**triggers the Display All function when clicked and outlines how it should be presented on the GUI.*/
+        displayAllButton.setOnAction(e->{
+         if (gadgets.isEmpty()){
+         outputArea.appendText("No gadgets to display"+ System.lineSeparator());
+         return;
+        }
+        outputArea.appendText(" The gadgets are "+ System.lineSeparator());
+        for (Gadget g: gadgets) {
+             outputArea.appendText(g.toString() + System.lineSeparator());
+             g.display();
+        }
+        });
+        /**Everytime a phone call is made, it appears in the log area that a call has been made. However, a 
+           message will appear in the log area saying there are no models to call if there are none.*/
+        makeAPhoneCallButton.setOnAction(e->{ 
+        boolean foundMobile = false;
+        for (Gadget g: gadgets) {
+            if (g instanceof Mobile) {
+                Mobile m = (Mobile) g;
+                logArea.appendText("Phone call made using:"+getModel2()+System.lineSeparator());
+                foundMobile=true;
+                break;
+            }
+        }
+        if (getModel2().isEmpty()){
+            outputArea.appendText("No mobile phone models available to call." + System.lineSeparator());
+        }
+        });
+        /**Everytime a song is downloaded, it appears in the log area that
+         * a new track has been added. However, a message will appear in the
+         * log area saying there are no models to download music onto if there are none.*/
+        downloadMusicButton.setOnAction(e->{
+        boolean foundMobile = false;
+        for (Gadget g: gadgets) {
+            if (g instanceof MP3) {
+                MP3 m = (MP3) g;
+                logArea.appendText("Music Track downloaded to"+getModel1()

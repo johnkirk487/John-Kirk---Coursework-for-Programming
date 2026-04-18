@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=GadgetShopTestHarness
+comment1.params=
+comment1.target=void\ testMP3AddTrack()
+comment1.text=Creates\ a\ static\ method\ which\ allows\ the\ MP3\ class\ to\ run\ without\r\ncreating\ an\ object.This\ tests\ what\ happens\ when\ a\ track\ is\ added.
+comment2.params=
+comment2.target=void\ testMP3subtractMemory()
+comment2.text=Same\ as\ above\ but\ this\ time\ tests\ what\ happens\ to\ the\ memory\r\nwhen\ the\ track\ is\ added.
+comment3.params=
+comment3.target=void\ testMobileMakeCall()
+comment3.text=Creates\ a\ static\ method\ which\ allows\ the\ Mobile\ class\ to\ run\ without\r\ncreating\ an\ object.This\ tests\ what\ happens\ when\ a\ call\ is\ made.
+comment4.params=
+comment4.target=void\ testMobilesubtractcallingcredit()
+comment4.text=Same\ as\ above\ but\ this\ time\ tests\ what\ happens\ to\ the\ calling\ credit\r\nwhen\ the\ phone\ call\ is\ made.
+numComments=5
