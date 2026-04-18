@@ -63,5 +63,17 @@ public MP3(String model, double price, int weight, String size, int memory)
     /**method which returns the current amount of MP3 memory instance variable*/
     return memory;
 }
+/**instance method which takes the parameters, the MP3 Memory and new MP3 Memory and uses them to free
+ * memory space on the MP3 player.*/
+double RemoveTrack (int newmemory)
+    {
+    if (newmemory>=memory)
+    { 
+    /*prints this message to the terminal after the song track has been removed.*/
+    System.out.println("Memory Space"+memory);
+    }
+    /**method which returns the new amount of MP3 memory instance variable*/
+    return newmemory;
+    }
 }
 
